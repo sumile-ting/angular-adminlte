@@ -9,9 +9,50 @@
   <base href="/">
 </head>
 <body>
-  <div class="container">
-      <ui-view></ui-view>
+<div class="wrapper">
+  <header class="main-header navbar-static-top ">
+    <nav class="navbar navbar-collapse top-nav" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <span>菜单一</span>
+        </li>
+        <li>
+            <span>
+                菜单二
+            </span>
+        </li>
+        <li><span>菜单三</span></li>
+      </ul>
+    </nav>
+  </header>
+  <aside class="main-sidebar">
+    <section class="sidebar">
+      <ul class="x-navigation">
+        <li>菜单1-1</li>
+        <li>菜单1-2</li>
+        <li>菜单1-3</li>
+      </ul>
+      <ul class="x-navigation">
+        <li>菜单1-1</li>
+        <li>菜单1-2</li>
+        <li>菜单1-3</li>
+      </ul>
+      <ul class="x-navigation">
+        <li>菜单1-1</li>
+        <li>菜单1-2</li>
+        <li>菜单1-3</li>
+      </ul>
+    </section>
+  </aside>
+  <div class="content-wrapper">
+    <ui-view></ui-view>
   </div>
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+    </div>
+    <strong>@ sumile-ting</strong>
+  </footer>
+</div>
 
 </body>
 </html>
