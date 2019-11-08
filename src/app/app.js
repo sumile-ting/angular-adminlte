@@ -1,25 +1,17 @@
 import angular from 'angular';
 
+import '../../node_modules/bootstrap/dist/css/bootstrap.css';
+
 import '../style/app.css';
 
-let app = () => {
-  return {
-    template: require('./app.html'),
-    controller: 'AppCtrl',
-    controllerAs: 'app'
-  }
-};
+import uirouter from 'angular-ui-router';
 
-class AppCtrl {
-  constructor() {
-    this.url = 'https://github.com/preboot/angular-webpack';
-  }
-}
+import routing from '../app.config';
+import home from '../features/home/index';
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [])
-  .directive('app', app)
-  .controller('AppCtrl', AppCtrl);
+angular.module(MODULE_NAME, [uirouter, home])
+  .config(routing);
 
 export default MODULE_NAME;
