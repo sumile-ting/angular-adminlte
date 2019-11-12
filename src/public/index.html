@@ -11,8 +11,14 @@
 <body>
 <div class="wrapper">
   <header class="main-header navbar-static-top ">
-    <nav class="navbar navbar-collapse top-nav" role="navigation">
-      <ul class="nav navbar-nav">
+    <div class="logo">
+      <img src="./img/logo.png">
+      <div class="logo-title">
+        ADMIN
+      </div>
+    </div>
+    <nav class="nav-container" role="navigation">
+      <ul class="nav-ul">
         <li>
           <span>菜单一</span>
         </li>
@@ -25,28 +31,29 @@
       </ul>
     </nav>
   </header>
-  <aside class="main-sidebar">
-    <section class="sidebar">
-      <ul class="x-navigation">
-        <li>菜单1-1</li>
-        <li>菜单1-2</li>
-        <li>菜单1-3</li>
-      </ul>
-      <ul class="x-navigation">
-        <li>菜单1-1</li>
-        <li>菜单1-2</li>
-        <li>菜单1-3</li>
-      </ul>
-      <ul class="x-navigation">
-        <li>菜单1-1</li>
-        <li>菜单1-2</li>
-        <li>菜单1-3</li>
-      </ul>
+  <div class="main">
+     <aside class="main-sidebar">
+        <ul class="x-navigation">
+          <li class="menu-item">菜单1-1</li>
+          <li class="menu-item">菜单1-2</li>
+          <li class="menu-item">菜单1-3</li>
+        </ul>
+        <ul class="x-navigation">
+          <li class="menu-item">菜单1-1</li>
+          <li class="menu-item">菜单1-2</li>
+          <li class="menu-item">菜单1-3</li>
+        </ul>
+        <ul class="x-navigation">
+          <li class="menu-item">菜单1-1</li>
+          <li class="menu-item">菜单1-2</li>
+          <li class="menu-item">菜单1-3</li>
+        </ul>
+    </aside>
+    <section class="content-wrapper">
+      <ui-view></ui-view>
     </section>
-  </aside>
-  <div class="content-wrapper">
-    <ui-view></ui-view>
   </div>
+
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
     </div>
