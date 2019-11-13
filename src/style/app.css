@@ -26,8 +26,8 @@ body {
 .main-header {
   position: relative;
   z-index: 1030;
-  height: 60px;
-  line-height: 60px;
+  height: 80px;
+  line-height: 80px;
   background: #20a0ff;
   color: #fff;
 }
@@ -71,18 +71,24 @@ footer {
 }
 
 .nav-container {
-  height: 60px;
+  height: 80px;
   padding-left: 230px;
+  width: 85%;
+  float: left;
 }
 
 .nav-ul {
   margin-bottom: 0px;
   height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-ul > li {
   display: inline-block;
-  padding: 0px 10px;
+  padding: 0px 25px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .nav-ul > li > span {
@@ -90,13 +96,13 @@ footer {
   font-weight: bold;
 }
 
-.nav-ul > li.active {
+.nav-ul > li.active, .nav-ul > li:hover {
   background: #1b68c1;
 }
 
 .logo {
   position: absolute;
-  height: 60px;
+  height: 80px;
   font-size: 22px;
   padding-left: 20px;
   padding-right: 20px;
@@ -146,6 +152,14 @@ footer {
   color: #20a0ff
 }
 
+.navmenu-menu-item:hover {
+  background-color: #e6f3f9;
+}
+
+.navmenu-submenu .navmenu-menu {
+  background-color: #e4e8f1;
+}
+
 .fa-right-icon {
   position: absolute;
   top: 50%;
@@ -157,7 +171,7 @@ footer {
 .main {
   display: flex;
   position: absolute;
-  top: 60px;
+  top: 80px;
   bottom: 0;
   overflow: hidden;
   width: 100%;
@@ -167,4 +181,30 @@ footer {
   flex: 1;
   overflow-y: auto;
   padding: 20px;
+}
+
+.fa-top-menu-i {
+  display: block;
+  margin-top: 10px;
+}
+
+.top-menu-label {
+  display: block;
+  position: relative;
+  margin-top: -5px;
+  line-height: 40px;
+}
+
+.user-info-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  margin: 20px 10px;
+  float: right;
+  cursor: pointer;
+}
+
+.user-info-label {
+  color: #fff;
+  cursor: pointer;
 }
