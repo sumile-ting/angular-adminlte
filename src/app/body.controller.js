@@ -1,3 +1,5 @@
+import config from './menu.config';
+
 export default class BodyController {
   constructor($scope, $state) {
 
@@ -8,6 +10,8 @@ export default class BodyController {
       $scope.hoverMenu = function (isHover) {
         $scope.isUserMenuHover = isHover;
       }
+
+      $scope.menuConfig = config;
   }
 }
 

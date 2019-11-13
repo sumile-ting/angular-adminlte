@@ -2,6 +2,7 @@
   {
     "name": "菜单一",
     "icon": "fa-home",
+    "id": "menu1",
     "subMenu": [
       {
         "name": "导航1-1",
@@ -48,6 +49,7 @@
   {
     "name": "菜单二",
     "icon": "fa-user-circle",
+    "id": "menu2",
     "subMenu": [
       {
         "name": "导航2-1",
@@ -73,6 +75,7 @@
   {
     "name": "菜单三",
     "icon": "fa-map-marker",
+    "id": "menu3",
     "subMenu": []
   }
 ]
