@@ -4,6 +4,10 @@ export default class BodyController {
       $scope.routeNav = function(router) {
          $state.go(router + '-1-1');
       }
+
+      $scope.hoverMenu = function (isHover) {
+        $scope.isUserMenuHover = isHover;
+      }
   }
 }
 

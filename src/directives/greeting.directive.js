@@ -6,7 +6,7 @@ function greeting() {
     scope: {
       name: '='
     },
-    template: '<h1>菜单1-1-1 Hello, {{name}}</h1>',
+    template: '<h1>菜单1-1-1 页面内容, {{name}}</h1>',
     link: function () {
       console.log('greeting link function');
     }

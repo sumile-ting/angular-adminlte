@@ -10,39 +10,40 @@
 </head>
 <body ng-cloak ng-controller="bodyController">
 <div class="wrapper">
-  <header class="main-header navbar-static-top ">
+  <header class="main-header navbar-static-top" ng-class="{toggleDropdownMenu: isUserMenuHover}">
     <div class="logo">
       <img src="./img/logo-small.png">
       <div class="logo-title">
         ADMIN
       </div>
     </div>
+    <div class="left-nav-con" ng-click="toggleLeftMenu()">
+      <i class="fa fa-navicon" ></i>
+    </div>
     <nav class="nav-container" role="navigation">
       <ul class="nav-ul">
         <li ng-class="{active:  leftNav.menu1}" ng-click="routeNav('menu1')">
-          <div>
             <i class="fa fa-home fa-2x fa-top-menu-i"></i>
             <span class="top-menu-label">菜单一</span>
-          </div>
         </li>
         <li ng-class="{active:  leftNav.menu2}" ng-click="routeNav('menu2')">
-          <div>
             <i class="fa fa-user-circle fa-2x fa-top-menu-i"></i>
             <span class="top-menu-label">菜单二</span>
-          </div>
         </li>
         <li ng-class="{active:  leftNav.menu3}" ng-click="routeNav('menu3')">
-          <div>
             <i class="fa fa-map-marker fa-2x fa-top-menu-i"></i>
             <span class="top-menu-label">菜单三</span>
-          </div>
         </li>
       </ul>
     </nav>
-    <div class="user-info pull-right">
+    <div class="user-info pull-right" ng-mouseenter="hoverMenu(true)" ng-mouseleave="hoverMenu(false)">
       <img src="img/user.png" class="user-info-img">
       <span class="user-info-label">admin</span>
     </div>
+    <ul class="dropdown-menu user-dropdown-menu" aria-labelledby="dropdownMenu1" ng-mouseenter="hoverMenu(true)"  ng-mouseleave="hoverMenu(false)">
+        <li><a href="javascript:void(0)">设置</a></li>
+        <li><a href="javascript:void(0)">退出</a></li>
+    </ul>
   </header>
   <div class="main">
     <aside class="main-sidebar">
@@ -51,11 +52,11 @@
           <div class="navmenu-submenu-title" style="padding-left: 20px;" menu-collapse-expand>
             <i class="fa fa-joomla"></i>
             导航1-1
-            <i class="fa fa-minus-square-o fa-right-icon"></i>
+            <i class="fa fa-plus-square-o fa-right-icon"></i>
           </div>
-          <ul class="navmenu-menu">
+          <ul class="navmenu-menu ng-hide" ui-sref-active="selected">
             <li class="navmenu-menu-item" style="padding-left: 40px;" ui-sref-active="active">
-              <a ui-sref="menu1-1-1">菜单1-1-1</a>
+              <a ui-sref="menu1-1-1" >菜单1-1-1</a>
             </li>
             <li class="navmenu-menu-item" style="padding-left: 40px;" ui-sref-active="active">
               <a ui-sref="menu1-1-2">菜单1-1-2</a>
@@ -91,9 +92,9 @@
           <div class="navmenu-submenu-title" style="padding-left: 20px;" menu-collapse-expand>
             <i class="fa fa-joomla"></i>
             导航2-2
-            <i class="fa fa-minus-square-o fa-right-icon"></i>
+            <i class="fa fa-plus-square-o fa-right-icon"></i>
           </div>
-          <ul class="navmenu-menu">
+          <ul class="navmenu-menu ng-hide">
             <li class="navmenu-menu-item" style="padding-left: 40px;" ui-sref-active="active">
               <a ui-sref="menu2-2-1">菜单2-2-1</a>
             </li>

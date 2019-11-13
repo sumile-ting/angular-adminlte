@@ -1,0 +1,78 @@
+[
+  {
+    "name": "菜单一",
+    "icon": "fa-home",
+    "subMenu": [
+      {
+        "name": "导航1-1",
+        "isLeaf": false,
+        "leftIcon": "fa-joomla",
+        "rightIcon": "fa-plus-square-o",
+        "hiddenSubMenu": true,
+        "subMenu": [
+          {
+            "name": "菜单1-1-1",
+            "href": "menu1-1-1"
+          },
+          {
+            "name": "菜单1-1-2",
+            "href": "menu1-1-2"
+          },
+          {
+            "name": "菜单1-1-3",
+            "href": "menu1-1-3"
+          }
+        ]
+      },
+      {
+        "name": "导航1-2",
+        "isLeaf": true,
+        "leftIcon": "fa-area-chart",
+        "href": "menu1-2-1"
+      },
+      {
+        "name": "导航1-3",
+        "isLeaf": false,
+        "leftIcon": "fa-reorder",
+        "rightIcon": "fa-plus-square-o ",
+        "hiddenSubMenu": true,
+        "subMenu": [
+          {
+            "name": "菜单1-3-1",
+            "href": "menu1-3-1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "菜单二",
+    "icon": "fa-user-circle",
+    "subMenu": [
+      {
+        "name": "导航2-1",
+        "isLeaf": true,
+        "leftIcon": "fa-area-chart",
+        "href": "menu2-1-1"
+      },
+      {
+        "name": "导航2-2",
+        "isLeaf": false,
+        "leftIcon": "fa-joomla",
+        "rightIcon": "fa-plus-square-o",
+        "hiddenSubMenu": true,
+        "subMenu": [
+          {
+            "name": "菜单2-2-1",
+            "href": "menu2-2-1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "菜单三",
+    "icon": "fa-map-marker",
+    "subMenu": []
+  }
+]

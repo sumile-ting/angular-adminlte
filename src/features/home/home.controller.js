@@ -1,7 +1,7 @@
 export default class HomeController {
   constructor(randomName){
     this.random = randomName;
-    this.name = 'World';
+    this.name = 'haha...';
   }
   changeName() {
     this.name = 'sumile';
