@@ -1,4 +1,4 @@
-# angularjs-webpack
+# angularjs-adminlte
 
 [![Dependency Status](https://david-dm.org/preboot/angularjs-webpack/status.svg)](https://david-dm.org/preboot/angular-webpack#info=dependencies) [![devDependency Status](https://david-dm.org/preboot/angularjs-webpack/dev-status.svg)](https://david-dm.org/preboot/angularjs-webpack#info=devDependencies)
 
@@ -23,7 +23,7 @@ This workflow serves as a starting point for building AngularJS (1.x) applicatio
 
 ```bash
 # clone our repo
-$ git clone https://github.com/preboot/angularjs-webpack.git my-app
+$ git clone https://github.com/sumile-ting/angular-adminlte.git my-app
 
 # change directory to your app
 $ cd my-app
@@ -85,5 +85,5 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 * live mode (TDD style): `npm run test-watch`
 
 # License
-
+this repo based on https://github.com/preboot/angularjs-webpack.git
 [MIT](/LICENSE)

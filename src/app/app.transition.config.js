@@ -1,10 +1,10 @@
 
-transition.$inject = ['$rootScope', '$transitions']
+transition.$inject = ['$rootScope', '$transitions', 'RefreshMenuConfigService']
 
-export default function transition($rootScope, $transitions) {
+export default function transition($rootScope, $transitions, RefreshMenuConfigService) {
   $transitions.onBefore({}, function (trans) {
     let to = trans.$to().name;
     $rootScope.leftNav = {};
-    $rootScope.leftNav[to.split('-')[0]] = true;
+    RefreshMenuConfigService.refresh($rootScope.menuConfig, $rootScope.leftNav, to);
   })
 }

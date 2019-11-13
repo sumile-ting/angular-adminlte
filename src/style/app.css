@@ -14,15 +14,6 @@ body {
   min-height: 100%;
 }
 
-[ng\:cloak],
-[ng-cloak],
-[data-ng-cloak],
-[x-ng-cloak],
-.ng-cloak,
-.x-ng-cloak {
-  display: none !important;
-}
-
 .main-header {
   position: relative;
   z-index: 1030;
@@ -131,14 +122,6 @@ footer {
   background-color: #eef1f6;
 }
 
-.navmenu-menu-item {
-  padding-left: 40px;
-}
-
-.navmenu-submenu-title {
-  padding-left: 20px;
-}
-
 .navmenu-menu-item, .navmenu-submenu-title {
   height: 56px;
   line-height: 56px;
@@ -167,6 +150,14 @@ footer {
 
 .navmenu-submenu .navmenu-menu {
   background-color: #e4e8f1;
+}
+
+.navmenu-menu-item {
+  padding-left: 40px;
+}
+
+.navmenu-submenu-title {
+  padding-left: 20px;
 }
 
 .fa-right-icon {

@@ -8,6 +8,7 @@ import uirouter from 'angular-ui-router';
 
 import routing from './app.routing.config';
 import transition from "./app.transition.config";
+import refreshMenuService from '../services/refreshMenuConfig.service';
 import bodyController from './body.controller';
 import menu from '../directives/menu-collapse-expand.directive';
 import home from '../features/home/index';
@@ -20,6 +21,7 @@ const MODULE_NAME = 'app';
 angular.module(MODULE_NAME, [uirouter, home, menu, menu1_1_3, menu1_2, menu2_1])
   .config(routing)
   .run(transition)
+  .service('RefreshMenuConfigService', refreshMenuService)
   .controller('bodyController', bodyController);
 
 export default MODULE_NAME;

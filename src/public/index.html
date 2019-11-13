@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="app" lang="en">
+<html ng-app="app" lang="en" ng-cloak>
 <head>
   <meta charset="UTF-8">
   <title>Angular App</title>
@@ -7,8 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <base href="/">
+
+  <style>
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak {
+      display: none !important;
+    }
+  </style>
 </head>
-<body ng-cloak ng-controller="bodyController">
+<body ng-controller="bodyController">
 <div class="wrapper">
   <header class="main-header navbar-static-top" ng-class="{toggleDropdownMenu: isUserMenuHover}">
     <div class="logo">
@@ -40,23 +51,25 @@
   <div class="main">
     <aside class="main-sidebar">
       <ul class="navmenu-x" ng-repeat="item in menuConfig" ng-if="leftNav[item.id]">
-          <li class="navmenu-submenu" ng-repeat="subItem in item.subMenu" ng-if="!subItem.isLeaf">
+        <div ng-repeat="subItem in item.subMenu">
+          <li class="navmenu-submenu"  ng-if="!subItem.isLeaf">
             <div class="navmenu-submenu-title" menu-collapse-expand>
               <i class="fa" ng-class="subItem.leftIcon"></i>
               {{subItem.name}}
               <i class="fa fa-right-icon" ng-class="subItem.rightIcon"></i>
             </div>
-            <ul class="navmenu-menu" ng-show="subItem.hiddenSubMenu">
+            <ul class="navmenu-menu" ng-show="!subItem.hiddenSubMenu">
               <li class="navmenu-menu-item"  ng-repeat="leafItem in subItem.subMenu" ui-sref-active="active">
-                <a ui-sref="leafItem.href" >{{leafItem.name}}</a>
+                <a ui-sref="{{leafItem.href}}" >{{leafItem.name}}</a>
               </li>
             </ul>
 
           </li>
-          <li class="navmenu-menu-item" ng-if="subItem.isLeaf" ui-sref-active="active">
+          <li class="navmenu-menu-item" ng-if="subItem.isLeaf" style="padding-left: 20px;" ui-sref-active="active">
             <i class="fa " ng-class="subItem.leftIcon"></i>
-            <a ui-sref="subItem.href">{{subItem.name}}</a>
+            <a ui-sref="{{subItem.href}}">{{subItem.name}}</a>
           </li>
+        </div>
       </ul>
     </aside>
     <section class="content-wrapper">
