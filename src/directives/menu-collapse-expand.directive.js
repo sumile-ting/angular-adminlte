@@ -1,5 +1,10 @@
 import angular from 'angular';
 
+/**
+ * 左侧菜单栏中控制子菜单展开收缩的按钮事件
+ * @param $state
+ * @returns {{link: link}}
+ */
 function menuCollapseExpand($state) {
   return {
     link: function ($scope, element, $attrs) {

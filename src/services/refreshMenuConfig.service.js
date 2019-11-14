@@ -1,5 +1,9 @@
 import angular from 'angular';
 
+/**
+ * 刷新menuConfig变量，以改变左侧菜单显示
+ * 刷新leftNav变量，以改变顶部菜单高亮状态
+ */
 export default class RefreshMenuConfig {
   refresh(menuConfig, leftNav, routeName) {
     angular.forEach(menuConfig, function (config) {

@@ -37,9 +37,11 @@ $ npm start
 
 go to [http://localhost:8080](http://localhost:8080) in your browser.
 
+
 # Table of Contents
 
 * [Getting Started](#getting-started)
+    * [Code](#code)
     * [Dependencies](#dependencies)
     * [Installing](#installing)
     * [Running the app](#running-the-app)
@@ -48,6 +50,13 @@ go to [http://localhost:8080](http://localhost:8080) in your browser.
 * [License](#license)
 
 # Getting Started
+
+## Code
+* [`/src/app`](/src/app)包含页面框架的配置信息
+* [`/src/features`](/src/features)目录存放所有模块，每个菜单项存放在一个特性文件夹中。文件夹中包含特性入口文件，页面，路由和css代码。
+* [`/src/public/index.html`](/src/public/index.html)为项目入口页面
+* [`/src/directives`](/src/directives)目录存放所有自定义指令
+* [`/src/services`](/src/services)目录存放所有自定义服务
 
 ## Dependencies
 
