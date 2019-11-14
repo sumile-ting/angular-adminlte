@@ -6,8 +6,6 @@
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <base href="/">
-
   <style>
     [ng\:cloak],
     [ng-cloak],
@@ -31,6 +29,7 @@
     <div class="left-nav-con" ng-click="toggleLeftMenu()">
       <i class="fa fa-navicon" ></i>
     </div>
+    <!-- 顶部导航菜单 -->
     <nav class="nav-container" role="navigation">
       <ul class="nav-ul">
         <li ng-repeat="item in menuConfig" ng-class="{active: leftNav[item.id]}" ng-click="routeNav(item.id)">
@@ -50,6 +49,7 @@
   </header>
   <div class="main">
     <aside class="main-sidebar">
+      <!-- 左侧导航菜单 - 折叠前 -->
       <ul class="navmenu-x" ng-repeat="item in menuConfig" ng-if="leftNav[item.id]">
         <div ng-repeat="subItem in item.subMenu">
           <li class="navmenu-submenu"  ng-if="!subItem.isLeaf">
@@ -71,6 +71,12 @@
           </li>
         </div>
       </ul>
+      <!-- 左侧导航菜单 - 折叠后 -->
+
+      <ul>
+
+      </ul>
+
     </aside>
     <section class="content-wrapper">
       <ui-view></ui-view>

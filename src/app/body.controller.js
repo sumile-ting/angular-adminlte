@@ -21,6 +21,10 @@ export default class BodyController {
         $scope.isUserMenuHover = isHover;
       }
 
+      $scope.toggleLeftMenu = function() {
+
+      }
+
       $rootScope.menuConfig = config;
   }
 }
