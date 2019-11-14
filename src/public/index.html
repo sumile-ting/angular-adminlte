@@ -6,6 +6,8 @@
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <base href="/">
+
   <style>
     [ng\:cloak],
     [ng-cloak],
@@ -18,7 +20,7 @@
   </style>
 </head>
 <body ng-controller="bodyController">
-<div class="wrapper">
+<div class="wrapper" ng-class="{toggleLeftPanel: !leftPanelShow}">
   <header class="main-header navbar-static-top" ng-class="{toggleDropdownMenu: isUserMenuHover}">
     <div class="logo">
       <img src="./img/logo-small.png">
@@ -50,7 +52,7 @@
   <div class="main">
     <aside class="main-sidebar">
       <!-- 左侧导航菜单 - 折叠前 -->
-      <ul class="navmenu-x" ng-repeat="item in menuConfig" ng-if="leftNav[item.id]">
+      <ul class="navmenu-x" ng-repeat="item in menuConfig" ng-if="leftNav[item.id] && leftPanelShow">
         <div ng-repeat="subItem in item.subMenu">
           <li class="navmenu-submenu"  ng-if="!subItem.isLeaf">
             <div class="navmenu-submenu-title" menu-collapse-expand>
@@ -72,9 +74,23 @@
         </div>
       </ul>
       <!-- 左侧导航菜单 - 折叠后 -->
+      <ul class="navmenu-x" ng-repeat="item in menuConfig" ng-if="leftNav[item.id] && !leftPanelShow" >
+        <div ng-repeat="subItem in item.subMenu" ng-mouseenter="showMenu($index, true)" ng-mouseleave="showMenu($index, false)">
+          <li class="navmenu-submenu navmenu-submenu-hook"  ng-if="!subItem.isLeaf">
+            <div class="navmenu-submenu-title">
+              <i class="fa" ng-class="subItem.leftIcon"></i>
+            </div>
+             <ul class="navmenu-menu" ng-show="submenuHook[$index]" ng-class="{'navmenu-menu-hook': submenuHook[$index]}">
+              <li class="navmenu-menu-item"  ng-repeat="leafItem in subItem.subMenu" ui-sref-active="active">
+                <a ui-sref="{{leafItem.href}}" >{{leafItem.name}}</a>
+              </li>
+            </ul>
+          </li>
 
-      <ul>
-
+          <li class="navmenu-menu-item" ng-if="subItem.isLeaf" style="padding-left: 20px;" ui-sref-active="active" ui-sref="{{subItem.href}}">
+            <i class="fa " ng-class="subItem.leftIcon"></i>
+          </li>
+        </div>
       </ul>
 
     </aside>

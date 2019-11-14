@@ -122,6 +122,17 @@ footer {
   background-color: #eef1f6;
 }
 
+.navmenu-submenu > ul.navmenu-menu-hook {
+  background-color: #eef1ff;
+  position: absolute;
+  left: 60px;
+  top: 0px;
+}
+
+.navmenu-submenu-hook{
+  position: relative;
+}
+
 .navmenu-menu-item, .navmenu-submenu-title {
   height: 56px;
   line-height: 56px;
@@ -144,7 +155,7 @@ footer {
   color: #20a0ff
 }
 
-.navmenu-menu-item:hover {
+.navmenu-menu-item:hover, .navmenu-submenu-title:hover {
   background-color: #E0E0E0;
 }
 
@@ -214,7 +225,6 @@ footer {
   left: 230px;
   padding-left: 10px;
   cursor: pointer;
-  display: none;
 }
 
 .user-dropdown-menu {
@@ -246,4 +256,25 @@ footer {
   top: 64px;
   left: inherit;
   transform-origin: center top; z-index: 2014;
+}
+
+.toggleLeftPanel > header> .logo {
+  width: 60px;
+}
+
+.toggleLeftPanel > header > .logo > img {
+  margin-left: -10px;
+}
+
+.toggleLeftPanel > header > .logo > .logo-title {
+  display: none;
+}
+
+.toggleLeftPanel > header > .left-nav-con {
+  left: 60px;
+}
+
+.toggleLeftPanel > .main > .main-sidebar {
+  width: 60px;
+  flex: 0 0 60px;
 }

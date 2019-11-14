@@ -31,8 +31,17 @@ export default class BodyController {
     /**
      * 顶部左侧收缩左侧菜单的按钮点击事件
      */
+    $scope.leftPanelShow = true;
     $scope.toggleLeftMenu = function () {
+        $scope.leftPanelShow = !$scope.leftPanelShow;
+    }
 
+    /**
+     * 左侧菜单收缩时，鼠标悬浮在图标上的事件
+     */
+    $scope.submenuHook = [];
+    $scope.showMenu = function(menuId, isShow) {
+      $scope.submenuHook[menuId] = isShow;
     }
 
     $rootScope.menuConfig = config;
