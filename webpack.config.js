@@ -16,6 +16,8 @@ var ENV = process.env.npm_lifecycle_event;
 var isTest = ENV === 'test' || ENV === 'test-watch';
 var isProd = ENV === 'build';
 
+const ROOT_PATH = isProd ? '/angular-adminlte/' : '/';
+
 module.exports = function makeWebpackConfig() {
   /**
    * Config
@@ -23,6 +25,7 @@ module.exports = function makeWebpackConfig() {
    * This is the object where all configuration gets set
    */
   var config = {};
+
 
   /**
    * Entry
@@ -46,7 +49,7 @@ module.exports = function makeWebpackConfig() {
 
     // Output path from the view of the page
     // Uses webpack-dev-server in development
-    publicPath: '/',
+    publicPath: ROOT_PATH,
 
     // Filename for entry points
     // Only adds hash in build mode
@@ -118,13 +121,15 @@ module.exports = function makeWebpackConfig() {
       // Pass along the updated reference to your code
       // You can add here any file extension you want to get copied to your output
       test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
-      loader: 'file-loader'
+      use:[
+        {loader:'file-loader',options:{name:'fonts/[name].[hash:8].[ext]'}}//项目设置打包到dist下的fonts文件夹下
+      ]
     }, {
       // HTML LOADER
       // Reference: https://github.com/webpack/raw-loader
       // Allow loading html through js
       test: /\.html$/,
-      loader: 'raw-loader'
+      loader: 'raw-loader',
     }]
   };
 
@@ -185,7 +190,8 @@ module.exports = function makeWebpackConfig() {
       // Reference: https://github.com/webpack/extract-text-webpack-plugin
       // Extract css files
       // Disabled when in test mode or not in build mode
-      new ExtractTextPlugin({filename: 'css/[name].css', disable: !isProd, allChunks: true})
+      new ExtractTextPlugin({filename: 'css/[name].css', disable: !isProd, allChunks: true}),
+
     )
   }
 
