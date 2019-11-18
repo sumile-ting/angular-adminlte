@@ -44,7 +44,7 @@
     </div>
     <ul class="dropdown-menu user-dropdown-menu" aria-labelledby="dropdownMenu1" ng-mouseenter="hoverMenu(true)"  ng-mouseleave="hoverMenu(false)">
         <li><a href="javascript:void(0)">设置</a></li>
-        <li><a href="javascript:void(0)">退出</a></li>
+        <li><a ng-click="logout()">退出</a></li>
     </ul>
   </header>
   <div class="main">
@@ -103,6 +103,13 @@
     <strong>@ sumile-ting</strong>
   </footer>
 </div>
-
 </body>
+    <script type="text/ng-template" id="logoutModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">提示</h3>
+        </div>
+        <div class="modal-body">
+            确认退出吗？
+        </div>
+    </script>
 </html>

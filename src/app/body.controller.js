@@ -1,7 +1,7 @@
 import config from './menu.config';
 
 export default class BodyController {
-  constructor($scope, $state, $rootScope) {
+  constructor($scope, $state, $rootScope, $uibModal) {
     /**
      * 顶部菜单点击事件
      * @param router
@@ -45,7 +45,17 @@ export default class BodyController {
     }
 
     $rootScope.menuConfig = config;
+
+    /**
+     * 退出登录
+     */
+    $scope.logout = function () {
+      $uibModal.open({
+        templateUrl: 'logoutModalContent.html',
+        // controller: 'ModalInstanceCtrl',
+      })
+    }
   }
 }
 
-BodyController.$inject = ['$scope', '$state', '$rootScope'];
+BodyController.$inject = ['$scope', '$state', '$rootScope', '$uibModal'];
